@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+/****************************************************************
+Last Updated : 2018-04-06
+Author       : amy
+Version      : 2.0
+****************************************************************/
+
+
+/*********************** 나눔고딕 ***********************/
+@font-face{ 
+	font-family:ng; 
+	src:url('/font/NanumGothic.woff'); 
+	src:local(※), url('/font/NanumGothic.woff') format(‘woff’) 
+}
+
+@font-face{ 
+	font-family:nbg; 
+	src:url('/font/NanumBarunGothic.woff'); 
+	src:local(※), url('/font/NanumBarunGothic.woff') format(‘woff’) 
+}
+
+@font-face {
+	font-family:'NanumGothicWeb'; 
+	font-style:normal; 
+	src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.eot');
+}
+
+
+/* reset css */
+html, body, ul, ol, dl, li, dt, dd, form, fieldset, legend {margin:0; padding:0; outline:0; border:0; background:transparent;}
+h1, h2, h3, h4, h5, h6, p {margin:0; font-weight:normal;}
+fieldset, img {border:0; vertical-align:top;}
+table {border-collapse:collapse; border-spacing:0; table-layout:fixed;}
+caption, label, legend {visibility:hidden; width:1px; height:1px; margin:0; padding:0; background:none; font-size:0; line-height:0; text-indent:-9999em}
+input, textarea, select {font-size:100%; line-height:normal; font-family:'나눔고딕', 'NanumGothic', ng, sans-serif; margin:0; padding:0; vertical-align:middle;}
+ul, ol, dl, li {list-style:none;}
+abbr, acronym {border-bottom: .1em dotted; cursor:help;}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section {display:block;}
+a {color:inherit; text-decoration:none}
+button {background:none; outline:0; border:0; margin:0; padding:0; cursor:pointer; font-family:'나눔고딕', 'NanumGothic', ng, sans-serif; }
+
+/* Mobile Reset */
+*{-webkit-text-size-adjust:none}
+input[type="text"], input[type="password"], input[type="email"], input[type="search"], input[type="image"], input[type="tel"], input[type="number"], textarea{-webkit-appearance:none; -webkit-border-radius:0}
+select {-webkit-border-radius:0;}
+
+/* rayout css */
+html,body {width:100%; min-width:1200px; font-size:14px; line-height:normal; letter-spacing:-0.5px; font-family:'나눔고딕', 'NanumGothic', ng, 'NanumGothicWeb', sans-serif; color:#333333;}
+#naver_dic_audio_controller {display:none; !important;}
+
+/* common CSS */
+.text-hidden {overflow:hidden !important; clip:rect(1px, 1px, 1px, 1px) !important; position:absolute !important; width:1px !important; height:1px !important;}
+.maincolor {color:#ee3123;}
+.bold {font-weight:600;}
+
+
+#wrap {width:100%; min-width:1200px;}
+#header {position:fixed; top:0; left:0; width:100%; height:100px; overflow:hidden; background:#fff; border-bottom:2px solid #ee3123; box-sizing:border-box; z-index:100;}
+#header .header_conts {width:1200px; height:98px; margin:0 auto; overflow:hidden;}
+#header .header_conts h1 {float:left; margin:34px 0;}
+#header .header_conts .company_info {float:right; width:445px; height:40px; margin:29px 0; overflow:hidden; font-weight:600;}
+#header .header_conts .company_info .call_number {float:left; width:145px; height:40px; line-height:36px; border:2px solid #ee3123; box-sizing:border-box; margin-right:5px; padding-left:36px; background:url('/images/header/icon_call.png') no-repeat 15px center;}
+#header .header_conts .company_info .inquiry {float:left; width:145px; height:40px; line-height:36px; border:2px solid #ee3123; box-sizing:border-box; margin-right:5px; padding-left:60px; background:url('/images/header/icon_inquiry.png') no-repeat 22px center; cursor:pointer}
+#header .header_conts .company_info .map {float:left; width:145px; height:40px; line-height:40px; background:#ee3123 url('/images/header/icon_map.png') no-repeat 30px center; text-align:center; color:#fff; box-sizing:border-box; padding-left:30px; cursor:pointer;}
+
+#footer {width:100%; overflow:hidden; background:#545454;}
+#footer .footer_conts {width:1200px; margin:0 auto; padding:40px 0 0; box-sizing:border-box; overflow:hidden;}
+#footer .footer_conts h2 {float:left; width:180px; height:45px; margin-right:55px;}
+#footer .footer_conts .text_area {float:right; width:920px; font-size:12px; line-height:25px; color:#fff; margin-bottom:30px;}
+#footer .footer_conts .text_area span {display:block;}

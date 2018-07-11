@@ -1,31 +1,67 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>탭만들기</title>
+  <link rel="stylesheet" href="/css/reset.css" type="text/css">
+  <link rel="stylesheet" href="/css/ui.css" type="text/css">
+  <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
 </head>
 <body>
-<div class="tab_area">
-  <ul class="tab_list">
-    <li>tab01</li>
-    <li>tab02</li>
-    <li>tab03</li>
-    <li>tab04</li>
-  </ul>
-  <div class="tab_cont_wrap">
-    <div class="tab_cont">
-      tab01 내용
+  <div id="wrap">
+    <div class="tab_area">
+      <ul class="tab_area_btn01">
+        <li>tab01</li>
+        <li>tab02</li>
+        <li>tab03</li>
+        <li>tab04</li>
+      </ul>
+      <div class="tab_area_cont01">
+        <div class="tab_cont">tab01 내용</div>
+        <div class="tab_cont"> tab02 내용</div>
+        <div class="tab_cont"> tab03 내용</div>
+        <div class="tab_cont"> tab04 내용</div>
+      </div>
     </div>
-    <div class="tab_cont">
-      tab02 내용
-    </div>
-    <div class="tab_cont">
-      tab03 내용
-    </div>
-    <div class="tab_cont">
-      tab04 내용
+
+    <div class="tab_area">
+      <ul class="tab_area_btn02">
+        <li>tab01</li>
+        <li>tab02</li>
+        <li>tab03</li>
+        <li>tab04</li>
+      </ul>
+      <div class="tab_area_cont02">
+        <div class="tab_cont"> tab01 내용</div>
+        <div class="tab_cont"> tab02 내용</div>
+        <div class="tab_cont"> tab03 내용</div>
+        <div class="tab_cont"> tab04 내용</div>
+      </div>
     </div>
   </div>
-</div>
+<script>
+var MakeTab = function(btnList, contList, idx) {   
+  var _this = this;
+  this.tabBtn = $(btnList);
+  this.tabCont = $(contList);
+  this.index = idx;  
+  $(this.tabBtn).on('click', function(){    
+    var tabIndex = $(this).index();    
+    $(_this.tabBtn).removeClass('on');
+    $(_this.tabCont).hide();
+    $(this).addClass('on')
+    $(_this.tabCont[tabIndex]).show();
+  });    
+  $(this.tabBtn[this.index]).addClass('on');
+  $(this.tabCont[this.index]).show();
+  return this;
+}
+
+var tabMake1 = new MakeTab('.tab_area_btn01 li', '.tab_area_cont01 .tab_cont', 0);
+var tabMake2 = new MakeTab('.tab_area_btn02 li', '.tab_area_cont02 .tab_cont', 3);
+var tabMake3 = new MakeTab('.btnWrap button', '.tabArea', 0);
+
+</script>
 </body>
 </html>

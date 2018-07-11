@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/****************************************************************
+Last Updated : 2018-04-06
+Author       : amy
+Version      : 2.0
+****************************************************************/
+
+/* 탭 */
+#wrap {max-width:1200px; margin:0 auto; padding-top:20px;}
+.tab_area {width:100%; overflow:hidden; margin-bottom:50px;}
+.tab_area ul {width:100%; height:50px; overflow:hidden; display:table; border-top:1px solid #ddd; border-bottom:1px solid #ddd; border-left:1px solid #ddd; box-sizing:border-box;}
+.tab_area ul li {display:table-cell; text-align:center; border-right:1px solid #ddd; box-sizing:border-box; line-height:50px; cursor:pointer;}
+.tab_area ul li.on {background:#000; color:#fff;}
+.tab_area .tab_cont {display:none; width:100%; border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; height:200px; box-sizing:border-box;}
+
+.tabArea{width: 300px; height: 300px;}
+.tab1{background-color: #eee;}
+.tab2{background-color: #eaa;}
+.tab3{background-color: #aae;}

@@ -11,12 +11,12 @@
 <body>
   <div id="wrap">
     <div class="tab_area">
-      <ul class="tab_area_btn01">
-        <li>tab01</li>
-        <li>tab02</li>
-        <li>tab03</li>
-        <li>tab04</li>
-      </ul>
+      <div class="tab_area_btn01">
+        <button>tab01</button>
+        <button>tab02</button>
+        <button>tab03</button>
+        <button>tab04</button>
+      </div>
       <div class="tab_area_cont01">
         <div class="tab_cont">tab01 내용</div>
         <div class="tab_cont"> tab02 내용</div>
@@ -26,12 +26,12 @@
     </div>
 
     <div class="tab_area">
-      <ul class="tab_area_btn02">
-        <li>tab01</li>
-        <li>tab02</li>
-        <li>tab03</li>
-        <li>tab04</li>
-      </ul>
+      <div class="tab_area_btn02">
+        <button>tab01</button>
+        <button>tab02</button>
+        <button>tab03</button>
+        <button>tab04</button>
+      </div>
       <div class="tab_area_cont02">
         <div class="tab_cont"> tab01 내용</div>
         <div class="tab_cont"> tab02 내용</div>
@@ -40,20 +40,22 @@
       </div>
     </div>
 
-    <div class="btnWrap">
-      <button type="button">버튼1</button>
-      <button type="button">버튼2</button>
-      <button type="button">버튼3</button>
-    </div>
-    <div class="tabArea tab1">
-        탭 내용1
-    </div>
-    <div class="tabArea tab2" style="display: none;">
-        탭 내용2
+    <div class="tab_area">
+      <div class="btnWrap">
+        <button type="button">버튼1</button>
+        <button type="button">버튼2</button>
+        <button type="button">버튼3</button>
+      </div>
+      <div class="tabArea tab1">
+          탭 내용1
+      </div>
+      <div class="tabArea tab2" style="display: none;">
+          탭 내용2
+      </div>    
+      <div class="tabArea tab3" style="display: none;">
+          탭 내용3
+      </div>
     </div>    
-    <div class="tabArea tab3" style="display: none;">
-        탭 내용3
-    </div>
   </div>
 <script>
 var MakeTab = function(btnList, contList, idx) {   
@@ -73,8 +75,8 @@ var MakeTab = function(btnList, contList, idx) {
   return this;
 }
 
-var tabMake1 = new MakeTab('.tab_area_btn01 li', '.tab_area_cont01 .tab_cont', 0);
-var tabMake2 = new MakeTab('.tab_area_btn02 li', '.tab_area_cont02 .tab_cont', 3);
+var tabMake1 = new MakeTab('.tab_area_btn01 button', '.tab_area_cont01 .tab_cont', 0);
+var tabMake2 = new MakeTab('.tab_area_btn02 button', '.tab_area_cont02 .tab_cont', 3);
 var tabMake3 = new MakeTab('.btnWrap button', '.tabArea', 0);
 
 </script>

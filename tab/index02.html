@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>탭만들기</title>
+  <link rel="stylesheet" href="/css/reset.css" type="text/css">
+  <link rel="stylesheet" href="/css/ui.css" type="text/css">
+  <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <div class="tab_area">
+      <ul class="tab_area_btn">
+        <li class="on">tab01</li>
+        <li>tab02</li>
+        <li>tab03</li>
+        <li>tab04</li>
+      </ul>
+      <div class="tab_area_cont">
+        <div class="tab_cont" style="display:block;">tab01 내용</div>
+        <div class="tab_cont"> tab02 내용</div>
+        <div class="tab_cont"> tab03 내용</div>
+        <div class="tab_cont"> tab04 내용</div>
+      </div>
+    </div>
+
+    <div class="tab_area">
+      <ul class="tab_area_btn">
+        <li class="on">tab01</li>
+        <li>tab02</li>
+        <li>tab03</li>
+        <li>tab04</li>
+      </ul>
+      <div class="tab_area_cont">
+        <div class="tab_cont" style="display:block;"> tab01 내용</div>
+        <div class="tab_cont"> tab02 내용</div>
+        <div class="tab_cont"> tab03 내용</div>
+        <div class="tab_cont"> tab04 내용</div>
+      </div>
+    </div>
+  
+<script>
+var tabApp = {
+  init: function(params){
+    this.classes = {
+      wrapClass: '.tab_area',
+      anchorClass: 'li',
+      contentsClass: '.tab_area_cont .tab_cont',
+    }   
+    this.tabWrap = $(this.classes.wrapClass);
+    this.tabBtn = $(this.classes.anchorClass);
+    this.tabConts = $(this.classes.contentsClass);   
+    this.addEvent(); 
+    return this;
+  },
+  addEvent: function(){
+    var _this = this;
+    this.tabBtn.on("click", function(){
+      _this.handleClicked.call(this, _this);
+    });
+  },
+  handleClicked: function(params){
+    var idx = $(this).index();
+    var $thisbtns = $(this).parent().find(params.classes.anchorClass);
+    var $thisConts = $(this).parents('.tab_area').find(params.classes.contentsClass);
+
+    $thisbtns.removeClass('on');
+    $thisConts.hide();
+    $(this).addClass('on');  
+    $($thisConts[idx]).show();
+  }
+}
+tabApp.init();
+</script>
+</body>
+</html>
+
+
+

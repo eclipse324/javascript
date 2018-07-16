@@ -8,6 +8,7 @@ var puzzle = {
       blankEl : '.blank',
       puzzleTable : '#puzzle-table',
       puzzlePiece : '.colsBtn',
+      puzzleChange : '#change-puzzle'
     }    
     this.setarrMake();    
     this.shuffleArray();
@@ -20,7 +21,6 @@ var puzzle = {
       this.puzzleSet.numArray[i-1] = i;
     }
     this.puzzleSet.numArray.push('');        
-    console.log(this.puzzleSet.numArray)
   },
   shuffleArray: function() {
     var arr = this.puzzleSet.numArray;
@@ -30,7 +30,6 @@ var puzzle = {
       arr[i] = arr[j];
       arr[j] = temp;
     }    
-    console.log(this.puzzleSet.numArray)
   },
   arrMake : function() {
     var arrIndex = 0;
@@ -43,7 +42,6 @@ var puzzle = {
         arrIndex++;
       }
     }
-    console.log(this.puzzleSet.numArray)
   },  
   htmlMake : function(){
     var html ='';
@@ -63,6 +61,9 @@ var puzzle = {
     var _this = this;
     $(this.puzzleSet.puzzlePiece).on('click', function(){
        _this.handleClicked.call(this, _this);
+    })
+   $(this.puzzleSet.puzzleChange).on('click', function(){
+       _this.init(4,4);
     })
   },
   handleClicked: function(){
@@ -100,7 +101,7 @@ var puzzle = {
       blankEl.data("y", thisY);
     }
     console.log($(puzzlePiece).data('x'));
-  }
+  }  
 }
 puzzle.init(3,3);
 

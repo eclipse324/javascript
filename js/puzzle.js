@@ -38,6 +38,7 @@ var puzzle = {
   },
   mixPuzzle : function(){
     var clickMix = true;
+    var mode = this.puzzleSet.totalNum;
     var interval = setInterval(function() {
       var no = Math.floor(Math.random() * $('.can-click').length);
       var selectCanClickEl = $('.can-click')[no];
@@ -47,7 +48,7 @@ var puzzle = {
     setTimeout(function() {
       clearInterval(interval)
       clickMix = false
-    }, 2000)
+    }, 100 * mode)
   },
   htmlMake : function(){
     var html ='';

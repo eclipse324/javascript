@@ -37,12 +37,10 @@ var puzzle = {
     }
   },
   mixPuzzle : function(){
-    var clickMix = true;
     var mode = this.puzzleSet.totalNum;
     var interval = setInterval(function() {
       var no = Math.floor(Math.random() * $('.can-click').length);
       var selectCanClickEl = $('.can-click')[no];
-      console.log(selectCanClickEl)
       selectCanClickEl.click();
     }, 100) 
     setTimeout(function() {
@@ -89,9 +87,8 @@ var puzzle = {
   addEvent: function(){
     var _this = this;
     $(this.puzzleSet.puzzlePiece).on('click', function(){
-       _this.handleClicked.call(this, _this);      
-       if (_this.answerPuzzle()) alert('정답입니다!');
-        _this.canClick();
+      _this.handleClicked.call(this, _this);      
+      _this.canClick();
     })
    $(this.puzzleSet.puzzleChange).on('click', function(){
        _this.init(4,4);
@@ -110,38 +107,29 @@ var puzzle = {
         blankY = blankEl.data("y");
 
     if (thisX == blankX && thisY == blankY - 1){
-      thisEl.animate({top: "+=83"}, 20)
-      blankEl.animate({top: "-=83"}, 20)
+      thisEl.animate({top: "+=83"}, 50)
+      blankEl.animate({top: "-=83"}, 50)
       thisEl.data('y', blankY); 
       blankEl.data('y', thisY);
     }
     if (thisX == blankX + 1 && thisY == blankY) {
-      thisEl.animate({left: "-=83"}, 20)
-      blankEl.animate({left: "+=83"}, 20)
+      thisEl.animate({left: "-=83"}, 50)
+      blankEl.animate({left: "+=83"}, 50)
       thisEl.data('x', blankX); 
       blankEl.data('x', thisX);
     }     
     if (thisX == blankX - 1 && thisY == blankY) {
-      thisEl.animate({left: "+=83"}, 20)
-      blankEl.animate({left: "-=83"}, 20)
+      thisEl.animate({left: "+=83"}, 50)
+      blankEl.animate({left: "-=83"}, 50)
       thisEl.data('x', blankX); 
       blankEl.data('x', thisX);           
     }    
     if (thisX == blankX && thisY == blankY + 1) {
-      thisEl.animate({top: "-=83"}, 20)
-      blankEl.animate({top: "+=83"}, 20)
+      thisEl.animate({top: "-=83"}, 50)
+      blankEl.animate({top: "+=83"}, 50)
       thisEl.data('y', blankY); 
       blankEl.data("y", thisY);
     }
-  },
-  answerPuzzle: function(){
-    for (var i = 0; i < this.puzzleSet.colX; i++) {
-      for (var j = 0; j < this.puzzleSet.rowY; j++) {
-        
-      }
-    }
-    return false;
   }
 }
 puzzle.init(3,3);
-
